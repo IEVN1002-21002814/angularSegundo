@@ -1,8 +1,9 @@
-<div class="grid grid-cols-4 gap-4">
+<div class="grid grid-cols-4 gap-4 pt-5">
+    <!-- /formulario/zodicao -->
     <div class="col-start-2">
-        <form [formGroup]="fromGroup" (ngSubmit)="onSubmit()" class="max-w-sn mx-auto">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="max-w-sn mx-auto">
             <div class="mb-5">
-                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
                     Nombre
                     </label>
                 
@@ -11,80 +12,89 @@
             </div>
 
             <div class="mb-5">
-                <label for="apellidop" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    Apellido P:
+                <label for="apellidop" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                    Apellido Paterno:
                     </label>
                 
                 <input type="text" id="apellidop" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Juan" required  formControlName="apellidop"/>
+                placeholder="Saucedo" required  formControlName="apellidop"/>
             </div>
 
             <div class="mb-5">
-                <label for="apellidom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    Apellido M:
+                <label for="apellidom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                    Apellido Materno:
                     </label>
                 
                 <input type="text" id="apellidom" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Juan" required  formControlName="apellidom"/>
+                placeholder="Zapata" required  formControlName="apellidom"/>
             </div>
 
             <div class="mb-5">
-                Fecha de nacimiento:
-                <label for="dia" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    Día:
-                    </label>
+                <div class="grid grid-cols-3 gap-3" >
+                    <div class="grid-cols-3">
+                        <label for="dia" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                            Día:
+                            </label>
+                        
+                        <input type="number" id="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required  formControlName="dia" min="1" max="31" pattern="[0-9]{2}"/>
+                    </div>
+                    <div class="grid-cols-3">
+                        <label for="mes" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                            Mes:
+                            </label>
+                        
+                        <input type="number" id="mes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required  formControlName="mes" min="1" max="12" pattern="[0-9]{2}"/>
+                    </div>
+                    <div class="grid-cols-3">
+                        <label for="anio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                            Año:
+                            </label>
+                        
+                        <input type="number" id="anio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required  formControlName="anio" min="1936" max="2024" pattern="[0-9]{4}"/>
+                    </div>
+                </div>
                 
-                <input type="date" id="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Juan" required  formControlName="dia"/>
             </div>
 
-            
-
             <fieldset>
-                <legend class="sr-only">Countries</legend>
-            
+                
+                <label for="sexos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-950">
+                    Sexo:
+                    </label>
                 <div class="flex items-center mb-4">
-                <input id="country-option-1" type="radio" name="countries" value="USA" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked>
-                <label for="country-option-1" class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">
-                    United States
-                </label>
+                    <input id="sex-option-1" type="radio" name="sexos" value="masculino" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" 
+                    checked formControlName="sexos">
+                    <label for="sex-option-1" class="block ms-2  text-sm font-medium text-gray-900 dark:text-gray-600">
+                        Masculino
+                    </label>
                 </div>
             
                 <div class="flex items-center mb-4">
-                <input id="country-option-2" type="radio" name="countries" value="Germany" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                <label for="country-option-2" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    Germany
-                </label>
-                </div>
-            
-                <div class="flex items-center mb-4">
-                <input id="country-option-3" type="radio" name="countries" value="Spain" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                <label for="country-option-3" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    Spain
-                </label>
-                </div>
-            
-                <div class="flex items-center mb-4">
-                <input id="country-option-4" type="radio" name="countries" value="United Kingdom" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-                <label for="country-option-4" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    United Kingdom
-                </label>
-                </div>
-            
-                <div class="flex items-center">
-                <input id="option-disabled" type="radio" name="countries" value="China" class="w-4 h-4 border-gray-200 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600" disabled>
-                <label for="option-disabled" class="block ms-2 text-sm font-medium text-gray-300 dark:text-gray-700">
-                    China (disabled)
-                </label>
+                    <input id="sex-option-2" type="radio" name="sexos" value="femenino" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                    formControlName="sexos">
+                    <label for="sex-option-2" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-600">
+                        Femenino
+                    </label>
                 </div>
             </fieldset>
   
             
 
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Registrar
+            <button type="submit" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Imprimir
             </button>
         </form>
+    </div>
+    <div class="col-center-2 border-s-4 border-gray-700 ps-5">
+        <h3>Nombre: <b>{{nombreR}}</b></h3>
+        <h3>Edad: <b>{{edadR}}</b> </h3>
+        <h4>Signo Zodiacal: <b>{{signoR}}</b></h4>
+        
+        <img src="{{imgR}}" width="120px" height="120px" alt="imagen" />
+
     </div>
     
 </div>

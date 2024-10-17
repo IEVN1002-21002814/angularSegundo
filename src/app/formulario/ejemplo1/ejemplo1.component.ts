@@ -16,7 +16,7 @@ interface Usuarios{
   styles: './ejemplo1.component.css'
 })
 
-export class Ejemplo1Component {
+export default class Ejemplo1Component {
   fromGroup! : FormGroup;
 
   materia = 'pwa'
