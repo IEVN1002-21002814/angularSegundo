@@ -55,6 +55,7 @@ export default class Ejemplo1Component {
     }
 
     subImprimir():void{
+      
       this.tem = localStorage.getItem('materia')!;
 
       const alumnoGuardado = localStorage.getItem('alumno');
